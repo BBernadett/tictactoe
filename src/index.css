@@ -1,13 +1,56 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  margin: 0 auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0a192f;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.square-block {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Oszlopok eloszlása a térköz figyelembevételével */
+  align-items: center; /* Sorról sorra igazítás */
+  width: 20vw;
+  margin: 15% auto;
+}
+
+.square {
+  flex: 0 0 calc(33.33% - 1vw); /* Minden elem a 33.33%-át foglalja el, 1vw térközzel */
+  height: 10vh;
+  margin: 0.5vw; /* Vízszintes térköz */
+  text-align: center;
+  background-color: #333;
+  border: 1px solid #495670;
+  border-radius: 0.25rem;
+  font-size: 5vh;
+  transition: transform 2s;
+}
+
+.winning-square {
+  transform: rotateX(180deg);
+}
+
+.btn {
+  visibility: visible;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin: 1rem;
+  padding: 2px 12px;
+  text-transform: capitalize;
+  font-family: var(--font-sans);
+  font-weight: bolder;
+  color: #14767f;
+  border-radius: 0.5rem;
+  box-shadow: inset 4px 4px 5px 0px #14767f, 4px 4px 5px 0px #14767f;
+  background: bottom;
+  border: 1px solid #14767f;
+  background: #0a192f;
 }
